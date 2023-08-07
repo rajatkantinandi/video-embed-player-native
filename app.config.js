@@ -10,7 +10,7 @@ export default {
     version: packageJSON.version,
     orientation: 'portrait',
     icon: './assets/icon.png',
-    scheme: 'guide',
+    scheme: 'app',
     userInterfaceStyle: 'automatic',
     splash: {
       image: './assets/splash.png',
@@ -37,7 +37,6 @@ export default {
     web: {
       favicon: './assets/favicon.png',
       backgroundColor: '#FFFCF8',
-      // eslint-disable-next-line max-len
       description: "A video player that plays embedded videos.",
       themeColor: '#FFFCF8',
     },
@@ -47,9 +46,6 @@ export default {
         projectId: 'a5ad23de-b01f-4d46-b805-efb24ca6fc72',
       },
     },
-    // runtimeVersion: {
-    //   policy: 'sdkVersion',
-    // },
   },
   name: 'app',
 };
