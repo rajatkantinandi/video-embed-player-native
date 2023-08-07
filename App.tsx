@@ -21,7 +21,6 @@ export default function App() {
 
   useEffect(() => {
     if (loaded) {
-      console.log('Loaded fonts');
       hideAsync();
     }
   }, [loaded]);
@@ -34,23 +33,33 @@ export default function App() {
     <TamaguiProvider config={config}>
       <Theme name={colorScheme}>
         <StatusBar style="auto" />
-        <SafeAreaView style={{ backgroundColor: config.themes[colorScheme!].accent.val }}>
-          <Stack flex={0} backgroundColor="$accent" px="$4" py="$3" flexDirection="row" ai="center" jc="space-between">
-            <Text color="$color" fontSize={30}>
-              Latest trailers
-            </Text>
-            <Pressable
-              style={{ backgroundColor: '#222', borderRadius: 50, padding: 10, marginTop: 10 }}
-              onPress={() => setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')}
+        <YStack width="100%" flex={1}>
+          <SafeAreaView style={{ backgroundColor: config.themes[colorScheme!].accent.val }}>
+            <Stack
+              flex={0}
+              backgroundColor="$accent"
+              px="$4"
+              py="$3"
+              flexDirection="row"
+              ai="center"
+              jc="space-between"
             >
-              <Text color="$light" fontSize={16}>
-                {colorScheme === 'dark' ? '🌙 Dark' : '☀️ Light'}
+              <Text color="$color" fontSize={30}>
+                Latest trailers
               </Text>
-            </Pressable>
-          </Stack>
-        </SafeAreaView>
-        <YStack flex={1} jc="center" ai="center" backgroundColor="$background">
-          <VideoList />
+              <Pressable
+                style={{ backgroundColor: '#222', borderRadius: 50, padding: 10, marginTop: 10 }}
+                onPress={() => setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')}
+              >
+                <Text color="$light" fontSize={16}>
+                  {colorScheme === 'dark' ? '🌙 Dark' : '☀️ Light'}
+                </Text>
+              </Pressable>
+            </Stack>
+          </SafeAreaView>
+          <YStack flex={1} jc="center" ai="center" backgroundColor="$background">
+            <VideoList />
+          </YStack>
         </YStack>
       </Theme>
     </TamaguiProvider>

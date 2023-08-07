@@ -39,6 +39,7 @@ export default {
       backgroundColor: '#FFFCF8',
       description: "A video player that plays embedded videos.",
       themeColor: '#FFFCF8',
+      bundler: 'metro',
     },
     extra: {
       ENV: process.env.ENV,

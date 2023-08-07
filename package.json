@@ -9,7 +9,6 @@
     "publish": "TAMAGUI_TARGET=native expo publish"
   },
   "dependencies": {
-    "@expo/webpack-config": "^18.0.1",
     "@tamagui/animations-react-native": "^1.22.11",
     "@tamagui/babel-plugin": "^1.22.11",
     "@tamagui/config": "^1.22.11",
@@ -23,7 +22,7 @@
     "prettier": "^2.8.8",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
-    "react-native": "0.71.7",
+    "react-native": "0.71.8",
     "react-native-reanimated": "~2.14.4",
     "react-native-web": "~0.18.10",
     "react-native-webview": "11.26.0",

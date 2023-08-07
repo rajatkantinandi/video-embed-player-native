@@ -5,5 +5,4 @@ export type VideoPlayerProps = {
   style?: any;
   onReady?: (event?: any) => void;
   onError?: (event?: any) => void;
-  onClick?: (event?: any) => void;
 };

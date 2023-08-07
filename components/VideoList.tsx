@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { Button, Image, Text, YStack } from 'tamagui';
+import { Button, Text, YStack } from 'tamagui';
 import videoData from '../constants/videoData';
-import { Linking, TouchableWithoutFeedback, ScrollView, type ScrollView as IScrollView } from 'react-native';
+import { Linking, ScrollView, type ScrollView as IScrollView, Image, Pressable } from 'react-native';
 import VideoPlayer from './VideoPlayer';
 
 export default function VideoList() {
@@ -13,7 +13,7 @@ export default function VideoList() {
       {!!selectedVideo && <VideoPlayer thumbnailUrl={selectedVideo.thumbnail} videoUrl={selectedVideo.url} />}
       <ScrollView scrollEnabled ref={scrollRef}>
         {videoData.map((video) => (
-          <TouchableWithoutFeedback
+          <Pressable
             key={video.url}
             onPress={() => {
               setSelectedVideo(video);
@@ -21,19 +21,19 @@ export default function VideoList() {
             }}
           >
             <YStack my="$3" mx={20} ai="center">
-              <Image source={{ uri: video.thumbnail }} mb="$3" height={130} width={320} br="$true" />
-              <YStack width={320}>
-                <Text color="$color" fontSize={20} fontFamily="$comfortaaReg">
+              <Image source={{ uri: video.thumbnail, height: 130, width: 320 }} />
+              <YStack width={320} mt="$3">
+                <Text color="$color" mb="$2" fontSize={20} fontFamily="$comfortaaReg">
                   {video.title}
                 </Text>
-                <Button mt="$2" unstyled onPress={() => Linking.openURL(video.channel.url)}>
+                <Pressable onPress={() => Linking.openURL(video.channel.url)}>
                   <Text fontSize={18} color="$link" fontFamily="$comfortaaBold" fontWeight="600">
                     {video.channel.title}
                   </Text>
-                </Button>
+                </Pressable>
               </YStack>
             </YStack>
-          </TouchableWithoutFeedback>
+          </Pressable>
         ))}
       </ScrollView>
     </>
