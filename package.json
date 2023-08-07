@@ -6,7 +6,8 @@
     "web": "cross-env TAMAGUI_TARGET=web expo start -c -w",
     "ios": "cross-env TAMAGUI_TARGET=native expo start -c -i",
     "android": "cross-env TAMAGUI_TARGET=native expo start -c -a",
-    "publish": "TAMAGUI_TARGET=native expo publish"
+    "publish": "cross-env TAMAGUI_TARGET=native expo publish",
+    "build:web": "cross-env TAMAGUI_TARGET=web expo export --platform=web"
   },
   "dependencies": {
     "@tamagui/animations-react-native": "^1.22.11",
