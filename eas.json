@@ -1,0 +1,30 @@
+{
+  "cli": {
+    "version": ">= 5.9.1"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleRelease"
+      },
+      "env": {
+        "TAMAGUI_TARGET": "native"
+      },
+      "ios": {
+        "simulator": true
+      },
+      "channel": "preview",
+      "node": "18.17.1"
+    },
+    "production": {}
+  },
+  "submit": {
+    "production": {}
+  }
+}

@@ -34,7 +34,7 @@ export default function App() {
       <Theme name={colorScheme}>
         <StatusBar style="auto" />
         <YStack width="100%" flex={1}>
-          <SafeAreaView style={{ backgroundColor: config.themes[colorScheme!].accent.val }}>
+          <SafeAreaView style={{ backgroundColor: config.themes[colorScheme!].accent.val, justifyContent: 'center' }}>
             <Stack
               flex={0}
               backgroundColor="$accent"
